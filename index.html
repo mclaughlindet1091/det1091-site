@@ -1,3 +1,252 @@
-<body style="background-color: #002040; color: #FFCC00; text-align: center; padding: 50px;">
-    <h1>McLaughlin Detachment 1091 - Testing Live Styles</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McLaughlin Detachment 1091 | Marine Corps League Gadsden, AL</title>
+    <style>
+        :root {
+            --mclNavy: #002040;
+            --mclRed: #990000;
+            --mclGold: #FFCC00;
+            --bgGray: #f4f6f9;
+            --textDark: #1a202c;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+        body { background-color: var(--bgGray); color: var(--textDark); display: flex; flex-direction: column; min-height: 100vh; line-height: 1.5; }
+        header { background-color: var(--mclNavy); color: white; border-bottom: 4px solid var(--mclGold); padding: 15px 20px; }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 15px; }
+        @media(min-width: 768px) { .header-container { flex-direction: row; } }
+        .emblem-placeholder { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--mclGold); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold; text-align: center; padding: 5px; }
+        .left-logo { background-color: var(--mclRed); }
+        .right-logo { background-color: #2d3748; }
+        .title-block { text-align: center; }
+        @media(min-width: 600px) { .title-block { text-align: left; } }
+        .title-block h1 { font-size: 20px; text-transform: uppercase; color: var(--mclGold); letter-spacing: 0.05em; }
+        .title-block p { font-size: 13px; color: #cbd5e0; font-weight: 600; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        nav a { color: white; text-decoration: none; transition: color 0.2s; }
+        nav a:hover { color: var(--mclGold); }
+        .join-btn { background-color: var(--mclRed); padding: 6px 15px; border-radius: 4px; color: white !important; }
+        .join-btn:hover { background-color: #730000; }
+        .hero { background: linear-gradient(135deg, var(--mclNavy) 0%, #0f172a 100%); color: white; text-align: center; padding: 50px 20px; }
+        .hero-badge { background-color: var(--mclRed); font-size: 10px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+        .hero h2 { font-size: 28px; font-weight: 800; margin-bottom: 15px; }
+        @media(min-width: 600px) { .hero h2 { font-size: 38px; } }
+        .hero p { max-width: 600px; margin: 0 auto 25px auto; font-size: 15px; color: #cbd5e0; }
+        .hero-btns { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+        @media(min-width: 480px) { .hero-btns { flex-direction: row; } }
+        .btn { display: inline-block; text-decoration: none; font-weight: bold; padding: 12px 24px; border-radius: 6px; font-size: 14px; transition: all 0.2s; text-align: center; }
+        .btn-gold { background-color: var(--mclGold); color: var(--mclNavy); }
+        .btn-gold:hover { background-color: #e6b800; }
+        .btn-outline { border: 1px solid white; color: white; }
+        .btn-outline:hover { background-color: white; color: var(--mclNavy); }
+        .vault-section { background-color: #fef8e6; border-bottom: 1px solid #feebc8; padding: 40px 20px; text-align: center; }
+        .vault-card { max-width: 450px; margin: 0 auto; background: white; padding: 25px; border-radius: 12px; border: 1px solid #feebc8; }
+        .vault-card h3 { font-size: 20px; color: var(--mclNavy); margin-bottom: 8px; }
+        .vault-card p { font-size: 13px; color: #4a5568; margin-bottom: 15px; }
+        .btn-vault { display: block; background-color: #d69e2e; color: white; text-decoration: none; font-weight: bold; padding: 12px; border-radius: 6px; font-size: 13px; text-align: center; }
+        .btn-vault:hover { background-color: #b7791f; }
+        .grid-panels { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; gap: 20px; }
+        @media(min-width: 768px) { .grid-panels { grid-template-columns: 1fr 1fr; } }
+        .panel { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
+        .panel-red { border-left: 5px solid var(--mclRed); }
+        .panel-gold { border-left: 5px solid var(--mclGold); }
+        .panel h3 { font-size: 18px; color: var(--mclNavy); margin-bottom: 15px; border-bottom: 1px solid #edf2f7; padding-bottom: 10px; text-transform: uppercase; }
+        .routine-item { margin-bottom: 12px; font-size: 13px; color: #2d3748; }
+        .routine-item strong { color: var(--textDark); display: block; font-size: 14px; }
+        .map-links { margin-top: 15px; display: flex; gap: 15px; font-size: 12px; }
+        .map-links a { color: #2b6cb0; font-weight: bold; text-decoration: none; }
+        .map-links a:hover { text-decoration: underline; }
+        .roster-section { background-color: #edf2f7; padding: 40px 20px; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .roster-container { max-width: 1100px; margin: 0 auto; }
+        .roster-section h3 { font-size: 20px; color: var(--mclNavy); text-align: center; text-transform: uppercase; margin-bottom: 5px; }
+        .roster-subtitle { font-size: 10px; color: #718096; text-align: center; font-weight: bold; text-transform: uppercase; margin-bottom: 25px; }
+        .roster-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media(min-width: 600px) { .roster-grid { grid-template-columns: repeat(4, 1fr); } }
+        .roster-card { background: white; padding: 15px; border-radius: 6px; text-align: center; border-top: 3px solid #cbd5e0; }
+        .card-red { border-top-color: var(--mclRed); }
+        .card-navy { border-top-color: var(--mclNavy); }
+        .card-gold { border-top-color: var(--mclGold); }
+        .roster-card strong { display: block; font-size: 14px; color: var(--textDark); }
+        .roster-card span { font-size: 10px; color: #718096; display: block; margin-top: 3px; font-weight: bold; }
+        .honors-section { max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .honors-section h3 { font-size: 20px; color: var(--mclNavy); margin-bottom: 10px; text-transform: uppercase; }
+        .honors-section p { font-size: 14px; color: #4a5568; max-width: 600px; margin: 0 auto 30px auto; }
+        .honors-grid { display: grid; gap: 15px; }
+        @media(min-width: 600px) { .honors-grid { grid-template-columns: repeat(3, 1fr); } }
+        .honor-box { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: left; }
+        .honor-box h4 { font-size: 14px; color: var(--mclRed); margin-bottom: 6px; font-weight: bold; text-transform: uppercase; }
+        .honor-box p { font-size: 12px; color: #718096; }
+        .aux-section { background-color: #090d16; color: white; padding: 40px 20px; text-align: center; }
+        .aux-section h3 { font-size: 16px; color: var(--mclGold); text-transform: uppercase; margin-bottom: 5px; }
+        .aux-section > p { font-size: 11px; color: #a0aec0; margin-bottom: 25px; text-transform: uppercase; }
+        .aux-grid { display: grid; gap: 20px; max-width: 650px; margin: 0 auto; }
+        @media(min-width: 550px) { .aux-grid { grid-template-columns: 1fr 1fr; } }
+        .aux-card { background: #121824; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; border: 1px solid #1e293b; }
+        .card-dog { border-color: var(--mclGold); }
+        .card-bell { border-color: #63b3ed; }
+        .aux-card strong { font-size: 15px; display: block; margin-top: 5px; text-transform: uppercase; }
+        .dog-title { color: var(--mclGold); }
+        .bell-title { color: #90cdf4; }
+        .aux-card span { font-size: 10px; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .dog-sub { color: #b7791f; }
+        .bell-sub { color: #4299e1; }
+        .aux-card p { font-size: 12px; color: #a0aec0; margin-bottom: 15px; }
+        .aux-link { display: block; width: 100%; text-decoration: none; font-size: 12px; font-weight: bold; padding: 8px; border-radius: 4px; text-align: center; }
+        .link-dog { background-color: var(--mclGold); color: black; }
+        .link-bell { background-color: #3182ce; color: white; }
+        .contact-section { max-width: 340px; margin: 40px auto; padding: 0 10px; }
+        .contact-card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .contact-card h3 { font-size: 18px; color: var(--mclNavy); text-align: center; margin-bottom: 2px; text-transform: uppercase; }
+        .contact-card > p { font-size: 11px; color: #a0aec0; text-align: center; margin-bottom: 15px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 13px; }
+        .btn-submit { width: 100%; background-color: var(--mclRed); color: white; border: none; font-weight: bold; padding: 10px; border-radius: 4px; font-size: 12px; text-transform: uppercase; cursor: pointer; }
+        footer { background-color: #0f172a; color: #718096; font-size: 10px; padding: 25px 20px; text-align: center; border-top: 1px solid #1e293b; margin-top: auto; }
+        footer p { font-weight: bold; color: #a0aec0; }
+        .footer-motto { color: var(--mclGold) !important; font-size: 9px; text-transform: uppercase; font-weight: bold; margin-top: 4px; letter-spacing: 0.15em; }
+        .footer-disclaimer { max-width: 550px; margin: 12px auto 0 auto; color: #4a5568; font-size: 9px; line-height: 1.4; }
+        ### 🧱 Block 2 of 3: Paste this immediately below Block 1
+```html
+    <header>
+        <div class="header-container">
+            <div class="title-block" style="display: flex; align-items: center; gap: 15px;">
+                <div class="emblem-placeholder left-logo">MCL Emblem</div>
+                <div>
+                    <h1>Marine Corps League</h1>
+                    <p>McLaughlin Detachment 1091 &bull; Gadsden, AL</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#roster">Leadership</a>
+                <a href="#meetings">Muster</a>
+                <a href="#newsletters" style="color: var(--mclGold);">Newsletters</a>
+                <a href="#contact" class="join-btn">Join</a>
+            </nav>
+            <div class="emblem-placeholder right-logo">Det 1091 Seal</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="hero-badge">Southeast Division &bull; Alabama Department</span>
+        <h2>Once a Marine, Always a Marine.</h2>
+        <p>Official terminal for Gadsden's Marines, FMF Corpsmen, and Navy Chaplains serving Etowah County through community outreach and veteran support.</p>
+        <div class="hero-btns">
+            <a href="#newsletters" class="btn btn-gold">📰 Read The Leaguer Newsletter</a>
+            <a href="#meetings" class="btn btn-outline">Next Muster Details</a>
+        </div>
+    </section>
+
+    <section id="newsletters" class="vault-section">
+        <div class="vault-card">
+            <h3>"The Leaguer" Digital Vault</h3>
+            <p>Maintained by WebSgt Keith Hall. Instantly view, read, and download print-ready PDF updates directly from our shared folder locker.</p>
+            <a href="#" target="_blank" class="btn-vault">📂 Open Newsletter Download Vault</a>
+        </div>
+    </section>
+
+    <section id="meetings" class="grid-panels">
+        <div class="panel panel-red">
+            <h3>Monthly Muster Routine</h3>
+            <div class="routine-item"><strong>When:</strong> 3rd Saturday of every month</div>
+            <div class="routine-item"><strong>0800 Hours:</strong> Pre-meeting breakfast at Jack's on Hood Ave (Roll out at 0845)</div>
+            <div class="routine-item"><strong>1000 Hours:</strong> Detachment Meeting begins (Officers meet at 0900)</div>
+        </div>
+        <div class="panel panel-gold">
+            <h3>Command Post Location</h3>
+            <div class="routine-item"><strong>Facility:</strong> Fraternal Order of Police (FOP) Lodge</div>
+            <div class="routine-item"><strong>Address:</strong> 300 6th Street South, East Gadsden, AL 35903</div>
+            <div class="routine-item"><strong>Mail Address:</strong> PO Box 8146, Gadsden, Alabama 35902</div>
+            <div class="map-links">
+                <a href="https://google.com" target="_blank">Map to FOP Lodge ↗</a>
+                <a href="https://google.com" target="_blank">Map to Jack's ↗</a>
+            </div>
+        </div>
+    </section>
+            <section id="roster" class="roster-section">
+        <div class="roster-container">
+            <h3>Detachment Command Staff</h3>
+            <p class="roster-subtitle">Active Elected & Appointed Leaders</p>
+            <div class="roster-grid">
+                <div class="roster-card card-red"><strong>Lynn McCary</strong><span>Commandant</span></div>
+                <div class="roster-card card-navy"><strong>Mitchell Chastain</strong><span>Sr. Vice / PAO</span></div>
+                <div class="roster-card"><strong>David Mumblo</strong><span>Jr. Vice Commandant</span></div>
+                <div class="roster-card"><strong>Scott Knepper</strong><span>Paymaster</span></div>
+                <div class="roster-card"><strong>Angie Pitts</strong><span>Adjutant / Historian</span></div>
+                <div class="roster-card"><strong>Bill Allers</strong><span>Judge Advocate</span></div>
+                <div class="roster-card"><strong>Charles Walker</strong><span>Chaplain</span></div>
+                <div class="roster-card card-gold"><strong>Keith Hall</strong><span>WebSgt / Editor</span></div>
+            </div>
+            <div class="roster-footer">
+                Jr. Past Commandant: Ricky Pitts &bull; Sergeant-at-Arms: Steve Stephens
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="honors-section">
+        <h3>100% Retention Upkeep Honors</h3>
+        <p>McLaughlin Detachment 1091 was formally recognized at the Alabama Department session for maintaining excellence in operational tracking and membership upkeep.</p>
+        <div class="honors-grid">
+            <div class="honor-box">
+                <h4>Toys for Tots</h4>
+                <p>County campaign collection drives organized alongside corporate civic partners like Sam Boswell Honda.</p>
+            </div>
+            <div class="honor-box">
+                <h4>VA Outreach</h4>
+                <p>Direct recreational outreach programs serving veterans homebound at Cherry Creek Village and Pell City VA Home.</p>
+            </div>
+            <div class="honor-box">
+                <h4>Honor Guard</h4>
+                <p>Deploying formal rifle teams and custom details to conduct respectful graveside military final honors details.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="aux-section">
+        <h3>Affiliated Auxiliaries</h3>
+        <p>Direct outward links to secondary unit portals</p>
+        <div class="aux-grid">
+            <div class="aux-card card-dog">
+                <div>
+                    <strong class="dog-title">Coosa Mud Dogs #233</strong>
+                    <span class="dog-sub">Military Order of the Devil Dogs</span>
+                    <p>The fun honor society of the League. Holding Growl sessions immediately following musters.</p>
+                </div>
+                <a href="#" class="aux-link link-dog">Visit Terminal ↗</a>
+            </div>
+            <div class="aux-card card-bell">
+                <div>
+                    <strong class="bell-title">Bama Bells Unit</strong>
+                    <span class="bell-sub">MCL Auxiliary Pillar</span>
+                    <p>The critical auxiliary branch driving local fundraising assistance programs and veteran family aid initiatives.</p>
+                </div>
+                <a href="#" class="aux-link link-bell">Visit Terminal ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-card">
+            <h3>Muster Inquiry</h3>
+            <p>Annual dues stand set at $30.00 yearly</p>
+            <form action="#" method="POST">
+                <div class="form-group"><input type="text" placeholder="Full Legal Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+                <div class="form-group"><textarea placeholder="Transmission Message..." rows="3" required></textarea></div>
+                <button type="submit" class="btn-submit">Submit Transmission</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; McLaughlin Detachment 1091 &bull; Marine Corps League</p>
+        <div class="footer-motto">Semper Fidelis</div>
+        <div class="footer-disclaimer">
+            Disclaimer: This dashboard is an official publication of McLaughlin Detachment 1091 and does not constitute an official asset of the United States Marine Corps. The Eagle, Globe, and Anchor design is a protected property trademark of the Marine Corps League.
+        </div>
+    </footer>
+
 </body>
+</html>
