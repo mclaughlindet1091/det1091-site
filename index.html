@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McLaughlin Detachment 1091 | Marine Corps League</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>McLaughlin Detachment 1091 | Marine Corps League Gadsden, AL</title>
+    <script src="https://tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        mclRed: '#990000',
-                        mclGold: '#FFCC00',
-                        mclNavy: '#002040',
+                        mclRed: '#990000',   /* USMC Scarlet */
+                        mclGold: '#FFCC00',  /* USMC Gold */
+                        mclNavy: '#002040',  /* Dress Blues Navy */
+                        mclBronze: '#4A2E00'
                     }
                 }
             }
@@ -21,158 +22,270 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
 
+    <!-- TOP HEADER / NAV WITH DUAL EMBLEM SLOTS -->
     <header class="bg-mclNavy text-white shadow-md border-b-4 border-mclGold">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-            <div>
-                <h1 class="text-xl font-bold tracking-wide uppercase text-mclGold">Marine Corps League</h1>
-                <p class="text-sm font-semibold text-gray-300">McLaughlin Detachment 1091 &bull; Gadsden, AL</p>
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Left Side: MCL Emblem Placeholder + Title -->
+            <div class="flex items-center gap-4 text-center md:text-left flex-col sm:flex-row">
+                <div class="w-16 h-16 bg-mclRed rounded-full border-2 border-mclGold flex items-center justify-center text-[10px] font-bold text-center p-1 text-white shadow shadow-black">
+                    MCL Emblem
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide uppercase text-mclGold">Marine Corps League</h1>
+                    <p class="text-sm font-semibold text-gray-300">McLaughlin Detachment 1091 &bull; Gadsden, AL</p>
+                </div>
             </div>
-            <nav class="mt-4 sm:mt-0 flex gap-6 text-sm font-medium">
+
+            <!-- Navigation Links -->
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-medium my-2 md:my-0">
                 <a href="#about" class="hover:text-mclGold transition">About</a>
-                <a href="#meetings" class="hover:text-mclGold transition">Meetings</a>
-                <a href="#events" class="hover:text-mclGold transition">Events</a>
+                <a href="#roster" class="hover:text-mclGold transition">Leadership</a>
+                <a href="#meetings" class="hover:text-mclGold transition">Muster</a>
+                <a href="#newsletters" class="hover:text-mclGold transition text-mclGold font-bold">Newsletters</a>
                 <a href="#contact" class="bg-mclRed text-white px-4 py-1.5 rounded hover:bg-red-800 transition">Join Us</a>
             </nav>
+
+            <!-- Right Side: Detachment Custom Emblem Placeholder -->
+            <div class="w-16 h-16 bg-slate-800 rounded-full border-2 border-mclGold flex items-center justify-center text-[10px] font-bold text-center p-1 text-white shadow shadow-black hidden md:flex">
+                Det 1091 Seal
+            </div>
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-mclNavy to-slate-900 text-white py-16 px-4 text-center border-b border-gray-800">
+    <!-- HERO PROFILE -->
+    <section class="bg-gradient-to-br from-mclNavy to-slate-900 text-white py-14 px-4 text-center border-b border-gray-800">
         <div class="max-w-3xl mx-auto">
             <span class="inline-block bg-mclRed text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Southeast Division &bull; Alabama Department</span>
             <h2 class="text-3xl sm:text-5xl font-extrabold mb-6 tracking-tight">Once a Marine, Always a Marine.</h2>
-            <p class="text-base sm:text-lg text-gray-300 mb-8 leading-relaxed">
-                Welcome to the McLaughlin Detachment 1091. We preserve the traditions of the Marine Corps, foster camaraderie, and dedicate ourselves to community service here in Etowah County.
+            <p class="text-base sm:text-lg text-gray-300 mb-6 leading-relaxed">
+                Welcome to the official home of Gadsden's Marines, FMF Corpsmen, and Navy Chaplains. Proudly serving Etowah County through community outreach, veteran support, and legacy preservation.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#meetings" class="bg-mclGold text-mclNavy font-bold px-6 py-3 rounded shadow hover:bg-yellow-400 transition w-full sm:w-auto">Find Our Next Meeting</a>
-                <a href="#contact" class="border border-white hover:bg-white hover:text-mclNavy font-medium px-6 py-3 rounded transition w-full sm:w-auto">Contact Detachment</a>
+                <a href="#newsletters" class="bg-mclGold text-mclNavy font-bold px-6 py-3 rounded shadow hover:bg-yellow-400 transition w-full sm:w-auto">📰 Read The Leaguer Newsletter</a>
+                <a href="#meetings" class="border border-white hover:bg-white hover:text-mclNavy font-medium px-6 py-3 rounded transition w-full sm:w-auto">Next Meeting Details</a>
             </div>
         </div>
     </section>
 
-    <section id="meetings" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-l-4 border-mclRed flex flex-col justify-between">
-            <div>
-                <h3 class="text-2xl font-bold text-mclNavy mb-4">Monthly Meetings</h3>
-                <p class="text-gray-600 mb-6">If you miss the camaraderie and being around individuals with shared experiences, your spot is waiting. Come join us.</p>
-                <div class="space-y-4 mb-6">
-                    <div class="flex items-start gap-3">
-                        <span class="text-xl">📅</span>
-                        <div>
-                            <strong class="block text-gray-900">When:</strong>
-                            <span class="text-gray-600">3rd Saturday of every month</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-xl">⏰</span>
-                        <div>
-                            <strong class="block text-gray-900">Time:</strong>
-                            <span class="text-gray-600">1000 Hours (10:00 AM)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="#contact" class="text-sm font-bold text-mclRed hover:underline">Questions about attending? Contact us &rarr;</a>
-        </div>
-
-        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-l-4 border-mclGold">
-            <h3 class="text-2xl font-bold text-mclNavy mb-4">Meeting Location</h3>
-            <div class="space-y-4">
-                <div class="flex items-start gap-3">
-                    <span class="text-xl">📍</span>
-                    <div>
-                        <strong class="block text-gray-900">Fraternal Order of Police (FOP) Lodge</strong>
-                        <span class="text-gray-600 block">300 6th St S</span>
-                        <span class="text-gray-600 block">East Gadsden, AL 35903</span>
-                    </div>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-xl">📬</span>
-                    <div>
-                        <strong class="block text-gray-900">Mailing Address:</strong>
-                        <span class="text-gray-600 block">PO Box 8146, Gadsden, AL 35902</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-gray-100">
-                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-2 text-sm text-blue-700 font-semibold hover:underline">
-                    Open in Google Maps ↗
+    <!-- DYNAMIC BULLETIN AND NEWSLETTER ARCHIVE LOCKER -->
+    <section id="newsletters" class="bg-amber-50 border-b border-amber-200 py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block bg-amber-600 text-white text-xs font-bold uppercase px-3 py-1 rounded mb-3">LATEST UPDATE</div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-mclNavy mb-4">"The Leaguer" Newsletter Archive</h3>
+            <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-sm sm:text-base">
+                Stop clogging your inbox with heavy email files! Members can now instantly view, read, and download print-ready PDF editions of our monthly detachment updates directly from our shared digital vault.
+            </p>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200 max-w-md mx-auto">
+                <h4 class="font-bold text-gray-900 mb-2">Detachment Shared Folder Locker</h4>
+                <p class="text-xs text-gray-500 mb-4">Maintained by WebSgt / Editor Keith Hall</p>
+                <!-- This link button will point to your Google Drive / OneDrive Folder -->
+                <a href="#" target="_blank" class="inline-flex items-center justify-center gap-2 w-full bg-amber-600 text-white font-bold py-3 rounded hover:bg-amber-700 transition">
+                    <span>📂</span> Open Newsletter Download Vault
                 </a>
             </div>
         </div>
     </section>
-    <section id="about" class="bg-slate-100 py-12 px-4 border-y border-slate-200">
+
+    <!-- CRITICAL INFO: MEETINGS & BREAKFAST ROUTINE -->
+    <section id="meetings" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+        <!-- Muster Details -->
+        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-l-4 border-mclRed flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-bold text-mclNavy mb-2">Monthly Muster Routine</h3>
+                <p class="text-xs text-mclRed font-bold uppercase tracking-wider mb-4">All Hands on Deck</p>
+                <p class="text-sm text-gray-600 mb-6">Reignite the bond and camaraderie. Join fellow veterans for our regular monthly assemblies at the FOP Lodge.</p>
+                <div class="space-y-4 text-sm mb-6">
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">📅</span>
+                        <div><strong>When:</strong> <span class="text-gray-600">3rd Saturday of every month</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">🍳</span>
+                        <div><strong>0800 Hours:</strong> <span class="text-gray-600">Pre-meeting breakfast at Jack's on Hood Ave (Roll out at 0845)</span></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">⏰</span>
+                        <div><strong>1000 Hours:</strong> <span class="text-gray-600">Detachment Meeting officially begins (Officers meet at 0900)</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-xs text-gray-400 bg-gray-50 p-2.5 rounded border border-gray-100">
+                💡 <em>Note: Schedule anomalies (like National Convention shifts) will be posted to our digital archive vault above.</em>
+            </div>
+        </div>
+
+        <!-- Location Profile Map Box -->
+        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border-l-4 border-mclGold flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-bold text-mclNavy mb-4">Command Post Locations</h3>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">📍</span>
+                        <div>
+                            <strong class="block text-gray-900">Meeting Facility:</strong>
+                            <span class="text-gray-600 block">Fraternal Order of Police (FOP) Lodge</span>
+                            <span class="text-gray-600 block">300 6th Street South, East Gadsden, AL 35903</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">📬</span>
+                        <div>
+                            <strong class="block text-gray-900">Official Mailing Address:</strong>
+                            <span class="text-gray-600 block">PO Box 8146, Gadsden, Alabama 35902</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100 flex gap-4">
+                <a href="https://google.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-700 font-bold hover:underline">
+                    Map to FOP Lodge ↗
+                </a>
+                <a href="https://google.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-700 font-bold hover:underline">
+                    Map to Hood Ave Jack's ↗
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- OFFICIAL RECOGNIZED LEADERSHIP ROSTER -->
+    <section id="roster" class="bg-slate-100 py-12 px-4 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl sm:text-3xl font-bold text-mclNavy text-center mb-2">Detachment Elected & Appointed Staff</h3>
+            <p class="text-xs text-gray-500 text-center uppercase tracking-widest mb-10">McLaughlin Detachment 1091 Roster</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm">
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-mclRed">
+                    <span class="block text-[10px] font-bold text-mclRed uppercase">Commandant</span>
+                    <strong class="block text-gray-900 text-base">Lynn McCary</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-mclNavy">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Sr. Vice / PAO</span>
+                    <strong class="block text-gray-900 text-base">Mitchell Chastain</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Jr. Vice Commandant</span>
+                    <strong class="block text-gray-900 text-base">David Mumblo</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Paymaster</span>
+                    <strong class="block text-gray-900 text-base">Scott Knepper</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Adjutant / Historian</span>
+                    <strong class="block text-gray-900 text-base">Angie Pitts</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Judge Advocate</span>
+                    <strong class="block text-gray-900 text-base">Bill Allers</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-gray-500 uppercase">Chaplain</span>
+                    <strong class="block text-gray-900 text-base">Charles Walker</strong>
+                </div>
+                <div class="bg-white p-4 rounded shadow-xs border-t-2 border-gray-300">
+                    <span class="block text-[10px] font-bold text-mclGold uppercase">WebSgt / Editor</span>
+                    <strong class="block text-gray-900 text-base">Keith Hall</strong>
+                </div>
+            </div>
+            <div class="text-center mt-6 text-xs text-gray-500">
+                Jr. Past Commandant: Ricky Pitts &bull; Sergeant-at-Arms: Steve Stephens
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE MISSIONS AND AWARDS -->
+    <section id="about" class="max-w-4xl mx-auto px-4 py-12 text-center">
+        <h3 class="text-2xl font-bold text-mclNavy mb-4">100% Excellence Recognition</h3>
+        <p class="text-sm text-gray-600 max-w-xl mx-auto mb-8">
+            McLaughlin Detachment 1091 remains dedicated to organizational accuracy. Our unit was formally recognized at the Alabama Department session for achieving a flawless 100% retention upkeep ranking status.
+        </p>
+        <div class="grid sm:grid-cols-3 gap-4 text-left text-xs">
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-mclRed mb-1.5">Community Impact</h4>
+                <p class="text-gray-500">Managing annual county Toys for Tots operations alongside community partners like Sam Boswell Honda.</p>
+            </div>
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-mclRed mb-1.5">Veteran Outreach</h4>
+                <p class="text-gray-500">Conducting direct recreational visits and outreach services to local homebound facility locations.</p>
+            </div>
+            <div class="bg-white p-4 rounded border border-gray-200">
+                <h4 class="font-bold text-mclRed mb-1.5">Final Watch Honors</h4>
+                <p class="text-gray-500">Deploying unified formal Honor Guards and Rifle Teams to execute respectful military final honors ceremonies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AFFILIATED SUBSIDIARY UNITS SECTION (DEVIL DOGS & BAMA BELLS) -->
+    <section class="bg-slate-950 text-white py-12 px-4 border-t border-gray-800">
         <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-2xl sm:text-3xl font-bold text-mclNavy mb-6">Our Mission</h3>
-            <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8">
-                The heartbeat of the Marine Corps League is the local detachment. We band together honorably discharged Marines, FMF Corpsmen, and Navy Chaplains to ensure we take care of our own, support local veteran programs, and remain vital citizen-partners in our community.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
-                <div class="bg-white p-5 rounded-lg shadow-xs">
-                    <h4 class="font-bold text-mclRed mb-2">Preserve Traditions</h4>
-                    <p class="text-xs text-gray-600">Celebrating the history, birthdays, and lineage of the United States Marine Corps.</p>
+            <h3 class="text-xl font-bold text-mclGold uppercase tracking-wider mb-2">Affiliated Orders & Auxiliaries</h3>
+            <p class="text-xs text-gray-400 mb-8">Direct outward command terminals to our secondary detachment units</p>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <!-- Devil Dogs Card (Gold & Dark Bronze) -->
+                <div class="bg-neutral-900 border-2 border-mclGold rounded-xl p-5 text-center flex flex-col justify-between items-center">
+                    <div>
+                        <span class="text-2xl">🐕</span>
+                        <h4 class="font-black text-lg text-mclGold uppercase tracking-wide mt-1">Coosa Mud Dogs</h4>
+                        <p class="text-[10px] text-yellow-600 font-bold uppercase mb-2">Pound #233 &bull; M.O.D.D.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed px-4">
+                            The fun honor society of the League. Carrying out quarterly Growl business assemblies immediately following detachment musters.
+                        </p>
+                    </div>
+                    <a href="#" target="_blank" class="mt-4 inline-block text-xs bg-mclGold text-black font-bold px-4 py-2 rounded hover:bg-yellow-400 transition w-full">
+                        Visit Devil Dogs Terminal ↗
+                    </a>
                 </div>
-                <div class="bg-white p-5 rounded-lg shadow-xs">
-                    <h4 class="font-bold text-mclRed mb-2">Marines Helping Marines</h4>
-                    <p class="text-xs text-gray-600">Providing direct support to local veterans and their families in times of need.</p>
-                </div>
-                <div class="bg-white p-5 rounded-lg shadow-xs">
-                    <h4 class="font-bold text-mclRed mb-2">Community Strength</h4>
-                    <p class="text-xs text-gray-600">Participating in local civic events, fundraisers, and youth programs.</p>
+
+                <!-- BAMA BELLS AUXILIARY CARD (Navy & White) -->
+                <div class="bg-neutral-900 border-2 border-blue-400 rounded-xl p-5 text-center flex flex-col justify-between items-center">
+                    <div>
+                        <span class="text-2xl">🔔</span>
+                        <h4 class="font-black text-lg text-blue-300 uppercase tracking-wide mt-1">Bama Bells Unit</h4>
+                        <p class="text-[10px] text-blue-400 font-bold uppercase mb-2">Marine Corps League Auxiliary</p>
+                        <p class="text-xs text-gray-400 leading-relaxed px-4">
+                            The critical pillar supporting our community programs, fundraising assistance drives, and local detachment family support.
+                        </p>
+                    </div>
+                    <a href="#" target="_blank" class="mt-4 inline-block text-xs bg-blue-600 text-white font-bold px-4 py-2 rounded hover:bg-blue-500 transition w-full">
+                        Visit Auxiliary Terminal ↗
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="events" class="max-w-4xl mx-auto px-4 py-12">
-        <h3 class="text-2xl font-bold text-mclNavy text-center mb-8">Detachment Bulletins</h3>
-        <div class="space-y-4">
-            <div class="bg-white p-5 rounded-lg border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <!-- CONTACT MUSTER FORM -->
+    <section id="contact" class="max-w-md mx-auto px-4 py-12 w-full mt-auto">
+        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+            <h3 class="text-lg font-bold text-mclNavy text-center mb-1">Muster Inquiry Portal</h3>
+            <p class="text-[11px] text-gray-400 text-center mb-4">Dues: Annual membership renewals stand set at $30.00 yearly.</p>
+            
+            <form action="#" method="POST" class="space-y-3 text-xs">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-mclRed">Annual Fundraiser</span>
-                    <h4 class="font-bold text-lg text-gray-900">Semper Fi Clay Shoot</h4>
-                    <p class="text-sm text-gray-600">Hosted annually at the CMP Talladega Marksmanship Park.</p>
-                </div>
-                <span class="bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-sm border border-slate-200 whitespace-nowrap">October Event</span>
-            </div>
-            <div class="bg-white p-5 rounded-lg border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-mclNavy">National Programs</span>
-                    <h4 class="font-bold text-lg text-gray-900">Toys for Tots Campaign</h4>
-                    <p class="text-sm text-gray-600">Drop-off locations open across the county in late autumn.</p>
-                </div>
-                <span class="bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-sm border border-slate-200 whitespace-nowrap">Nov / Dec</span>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="max-w-md mx-auto px-4 py-12 mt-auto w-full">
-        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md border border-gray-200">
-            <h3 class="text-xl font-bold text-mclNavy mb-2 text-center">Contact or Join Detachment 1091</h3>
-            <p class="text-xs text-gray-500 text-center mb-6">Are you a Marine or FMF Corpsman looking to join? Drop us a message.</p>
-            <form action="#" method="POST" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Name</label>
-                    <input type="text" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-mclRed" placeholder="John Doe">
+                    <label class="block font-bold text-gray-700 uppercase mb-1">Full Legal Name</label>
+                    <input type="text" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-mclRed" placeholder="Marine / Applicant Name">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email Address</label>
-                    <input type="email" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-mclRed" placeholder="you@example.com">
+                    <label class="block font-bold text-gray-700 uppercase mb-1">Email Terminal Address</label>
+                    <input type="email" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-mclRed" placeholder="name@domain.com">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Message</label>
-                    <textarea rows="3" required class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-mclRed" placeholder="I would like more information on joining the next meeting..."></textarea>
+                    <label class="block font-bold text-gray-700 uppercase mb-1">Transmission Message</label>
+                    <textarea rows="3" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-mclRed" placeholder="Inquire regarding eligibility timelines or assembly details..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-mclRed text-white font-bold py-2.5 rounded hover:bg-red-800 transition text-sm">Send Message</button>
+                <button type="submit" class="w-full bg-mclRed text-white font-bold py-2 rounded hover:bg-red-800 transition uppercase tracking-wider">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-mclNavy text-gray-400 text-xs py-6 mt-12 border-t border-gray-800 text-center">
-        <div class="max-w-6xl mx-auto px-4 space-y-2">
-            <p class="text-gray-300 font-semibold">&copy; McLaughlin Detachment 1091 &bull; Marine Corps League</p>
-            <p>Semper Fidelis</p>
-            <div class="text-[10px] text-gray-600 pt-2">
-                The Marine Corps League is a 501(c)(4) Organization. The Eagle, Globe, and Anchor emblem is a registered trademark of the USMC.
+    <!-- FOOTER TERMINAL -->
+    <footer class="bg-slate-900 text-gray-400 text-[11px] py-6 text-center border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 space-y-1">
+            <p class="text-gray-300 font-bold">&copy; McLaughlin Detachment 1091 &bull; Marine Corps League</p>
+            <p class="text-mclGold tracking-widest uppercase font-semibold text-[9px]">Semper Fidelis</p>
+            <div class="text-[9px] text-gray-600 max-w-xl mx-auto pt-2">
+                Disclaimer: The Marine Corps League is a formally recognized 501(c)(4) veteran non-profit entity. The Eagle, Globe, and Anchor emblem is a protected design asset of the United States Marine Corps.
             </div>
         </div>
     </footer>
